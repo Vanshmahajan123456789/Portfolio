@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Portfolio</title>
+	<link rel="icon" type="image/jpg" href="Screenshot 2024-04-12 032518.png">
+	<!-- <link rel="stylesheet" href="style.css"> -->
+
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+		
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+			font-size:120%;
+			overflow-x: hidden;
+		}
+		
+		/* Header Navbar Styles */
+		.navbar {
+			display: flex;
+			z-index: 3;
+			align-items: center;
+			justify-content: space-between;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background-image: linear-gradient(90deg, #74D7BB, #53C8B6, #35A99C);
+			background-color: transparent;
+		}
+		
+		.logo {
+			padding: 0 5rem;
+		}
+		
+		.logo .logo-heading {
+			color: #fff;
+		}
+		
+		.menu {
+			padding: 0 5rem;
+		}
+		
+		.hamburger {
+			display: none;
+			color: #fff;
+			font-size: 25px;
+		}
+		
+		.cross-icon {
+			display: none;
+		}
+		
+		.menu .menu-list {
+			display: flex;
+			list-style: none;
+		}
+		
+		.menu-list .menu-list-items {
+			padding: 0.5rem 1rem;
+		}
+		
+		/* Main Hero Section Styles */
+		.hero {
+			background-image: url('p.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 110%;
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center; 
+			margin: 4.8rem 0px;
+			margin-bottom: 0px;
+		}
+		
+		
+		.hero .intro {
+			text-align: center;
+			margin: 0;
+			max-width: 30rem;
+			padding: 2rem;
+			position: relative; /* Add position relative */
+			left: -360px; /* Shift the intro slightly to the left */
+			top:-90px;
+		}
+		
+		
+		.hero .intro-buttons {
+			margin: 2rem 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+		
+		/* About section styles */
+
+		.about {
+			display: flex;
+			align-items: center;
+			background-image: linear-gradient(45deg, #363D73, #2794B3);
+			justify-content: space-evenly;
+			height: 100vh;
+			width: 100%;
+			padding: 80px;
+		}
+		
+		.about .about-text {
+			width: 450px;
+			height: 600px;
+			color: #fff;
+			padding: 5rem 1rem 5rem 5rem;
+		}
+		
+		.about .about-image img {
+			height: 400px;
+			width: 400px;
+			padding: 5rem 5rem 5rem 1rem;
+			border-radius: 50%;
+		}
+		
+		/*Education section styles*/
+		/* CSS for education page */
+		#education {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 110vh;
+			align-items: center;
+			min-height: 100vh;
+			background-color: #f7f7f7;
+			background-image: url('bg1.jpg');
+			background-repeat: no-repeat;
+			background-size: 75%;
+		}
+		
+		#education-container {
+			max-width: 1080px;
+			height: auto;
+			padding: 30px;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		#education-heading {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		
+		#education-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		#education-text {
+			width: 100%;
+			max-width: 800px;
+			padding-bottom: 30px;
+		}
+		
+		#education-table {
+			width: 100%;
+			max-width: 800px;
+		}
+		
+		#education h2 {
+			color: #333;
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		
+		#education p {
+			font-size: 20px;
+			line-height: 1.6;
+			color: #555;
+		}
+		
+		#education table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 30px;
+		}
+		
+		#education table th,
+		#education table td {
+			padding: 15px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+			font-size: 18px;
+		}
+		
+		#education table th {
+			background-color: #363D73;
+			color: #fff;
+		}
+		
+		#education table tbody tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		
+		#education table tbody tr:hover {
+			background-color: #e0e0e0;
+		}
+		
+		/* CSS for skills */
+		
+		#skills {
+			background-color: rgba(255, 253, 246, 255);
+			margin-top: -20px;
+			height: 110vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		#skill-head {
+			height: 600px;
+			width: 400px;
+			margin-left: 100px;
+			font-size: 100px;
+			margin-top: 60px;
+			border-right: 3px solid rgba(0, 0, 0, 0.7);
+			padding-top: 0px;
+		}
+		
+		#skill-head p {
+			margin: 0px;
+		}
+		
+		#skill-list {
+			padding-top: 30px;
+			padding-right: 30px;
+			padding-left: 0px;
+			height: 600px;
+			width: 750px;
+			margin-left: -24px;
+		}
+		
+		#skill-list li {
+			font-size: 30px;
+			padding: 10px;
+		}
+		
+		#skill-list li {
+			list-style-type: none;
+			font-size: 24px;
+			margin-bottom: 10px;
+			text-align: left;
+			transition: width 0.3s, transform 0.3s;
+		}
+		
+		#skill-list li:hover {
+			cursor: pointer;
+			transform: translateX(20px);
+			font-weight: bold;
+			list-style-type: none;
+			.progress-bar {
+				animation: fillProgress 1s ease-in-out forwards;
+			  }
+		}
+		
+		
+		
+		.progress-container {
+			width: 200px;
+			height: 10px;
+			background-color: #f1f1f1;
+			border-radius: 5px;
+			overflow: hidden;
+		  }
+		  
+		  .progress-bar {
+			width: var(--progress);
+			height: 100%;
+			background-color: #000;
+			border-radius: 5px;
+		  }
+		  
+		  @keyframes fillProgress {
+			0% {
+			  width: 0%;
+			}
+			100% {
+			  width: calc(var(--progress));
+			}
+		  }
+		  
+		
+		/* Projects section styles */
+
+		.projects {
+			margin: 4.8rem 0;
+			height: 80vh;
+			padding: 0 5rem;
+		}
+		
+		.port-card {
+			padding: 0 !important;
+			background: none !important;
+			border: 2px solid #000;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.port-card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+		}
+		
+		.port-card .image {
+			width: 100%;
+		}
+		
+		.port-card .image img {
+			height: 200px;
+			width: 100%;
+			border-top-right-radius: 20px;
+			border-top-left-radius: 20px;
+		}
+		
+		/* Projects section styles */
+
+		.my-row {
+			display: flex;
+			padding-top: 150px;
+			align-items: center;
+			justify-content: space-between;
+			margin: 2rem 0;
+		}
+		
+		.my-row .my-col {
+			text-align: center;
+			width: 30%;
+		}
+		
+		.my-card {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-radius: 20px;
+			background-image: linear-gradient(#74D7BB, #53C8B6, #35A99C);
+			padding: 1rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.my-card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+		}
+		
+		.icon {
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			background-color: #363D73;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.icon svg {
+			font-size: 30px;
+			color: #fff;
+		}
+		
+		#projects {
+			color: #000;
+		}
+		.projects{
+			padding: 100px;
+		}
+		
+		/* Contact section styles */
+
+		.contact {
+			padding: 0 5rem;
+		}
+		
+		.contact-content {
+			display: flex;
+			margin: 3rem 0;
+			justify-content: space-between;
+		}
+		
+		.contact-form-container {
+			width: 50%;
+		}
+		
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.contact-form .form-controls {
+			width: 80%;
+			padding: 10px 0;
+			margin: 1.67rem 0;
+		}
+		
+		.contact-form .form-btn {
+			width: 81%;
+			margin-left:px;
+		}
+		
+		.contact-details {
+			width: 50%;
+		}
+		
+		#contact {
+			color: #000;
+		}
+		
+		/* Footer Styles */
+
+		.footer {
+			background-color: #000;
+			color: #fff;
+			padding: 2rem;
+		}
+		
+		.footer-list-items {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50px;
+			width: 50px;
+			margin: 1rem 1rem 0 1rem;
+			border-radius: 50%;
+			background-color: #53C8B6;
+		}
+		
+		.footer-links {
+			font-size: 24px;
+			color: #fff;
+			text-decoration: none;
+		}
+		
+		.social-links {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.footer-menu {
+			padding: 0 5rem;
+		}
+		
+		.footer-menu .footer-menu-list {
+			display: flex;
+			list-style: none;
+		}
+		
+		#insta {
+			width: 40px;
+		}
+		
+		/* utility classes */
+		.greet-heading {
+			display: grid;
+			font-size: 1.3rem;
+			font-weight: lighter;
+			margin: 0;
+			padding: 0;
+			
+			letter-spacing: 1px;
+			color: white;
+		}
+		
+		.my-heading {
+			font-size: 2.5rem;
+			margin: 0;
+			padding: 0;
+			color: white;
+		}
+		
+		.sub-heading {
+			margin: 0;
+			font-size: 0.8rem;
+			color: white;
+			font-weight: light;
+		
+		}
+		
+		.links:hover {
+			border-bottom: 2px solid #fff;
+		}
+		
+		.links {
+			border-bottom: 2px solid transparent;
+			transition: all 0.25s;
+			padding: 5px;
+			text-decoration: none;
+			color: #fff;
+		}
+		
+		.btn {
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			letter-spacing: 1px;
+			border: none;
+		}
+		
+		.common-btn {
+			background-color: #35A99C;
+			color: #fff;
+			border: 2px solid #35A99C;
+			transition: all 0.25s;
+		}
+		
+		.common-btn:hover {
+			background-color: #fff;
+			color: #35A99C;
+			border: 2px solid #35A99C;
+			outline: none;
+		}
+		
+		.ghost-btn {
+			background-color: #fff;
+			color: #35A99C;
+			border: 2px solid #35A99C;
+			outline: none;
+		}
+		
+		.ghost-btn:hover {
+			background-color: #35A99C;
+			color: #fff;
+			transition: all 0.25s;
+			border: 2px solid #35A99C;
+		}
+		
+		.heading-span {
+			font-weight: bolder;
+		}
+		
+		.text-center {
+			text-align: center;
+		}
+		
+		.small-para {
+			font-size: 14px;
+			color: #fff;
+		}
+		
+		.white-text {
+			color: #fff;
+		}
+		
+		.blue-text {
+			color: #363D73;
+		}
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			top: 200px;
+			right: 20px;
+		  }
+		  
+		  .modal-content {
+			background-color: #fefefe;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		  }
+		  
+		  .close {
+			color: #aaa;
+			float: right;
+			font-size: 20px;
+			font-weight: bold;
+			cursor: pointer;
+		  }
+		  
+		  .close:hover {
+			color: black;
+		  }
+		  
+		  .chat-container {
+			max-width: 400px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		
+		/* GIF (I have Proficiency in )*/
+		
+		#p{
+			font-size:19.5px;
+			font-weight: 700;
+			margin-top:2px;
+			color: white;
+		}
+		
+		#head {
+			font-size: 24px;
+			font-family: Arial, sans-serif;
+			color: cyan;
+			display: inline-block;
+			position: relative;
+			vertical-align: top;
+		  }
+		  
+		  #head::after {
+			content: "";
+			position: absolute;
+			top: 0.15em;
+			right: -2px;
+			width: 2.5px;
+			height: 0.8em;
+			background-color: #333;
+			animation: blink-animation 1s infinite;
+		  }
+		  
+		  @keyframes blink-animation {
+			0%, 50% {
+			  opacity: 1;
+			}
+			51%, 100% {
+			  opacity: 0;
+			}
+		  }</style>
+
+</head>
+<body>
+	<!-- Navbar header section -->
+	<header class="header">
+		<nav class="navbar">
+			<div class="logo">
+				<h2 class="logo-heading">Vansh Mahajan</h2>
+			</div>
+			<div class="menu">
+				<ul class="menu-list">
+					<li class="menu-list-items">
+						<a class="links" href="#home">
+							Home
+						</a>
+					</li>
+					<li class="menu-list-items">
+						<a class="links" href="#about">
+							About
+						</a>
+					</li>
+					<li class="menu-list-items">
+						<a class="links" href="#education">
+							Education
+						</a>
+					</li>
+					<li class="menu-list-items">
+						<a class="links" href="#skills">
+							Skills
+						</a>
+					</li>
+					<li class="menu-list-items">
+						<a class="links" href="#projects">
+							Projects
+						</a>
+					</li>
+					<li class="menu-list-items">
+						<a class="links" href="#contact">
+							Contact Me
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Main hero banner -->
+	<section id="home" class="hero">
+		<div class="intro">
+			<div class="headings">
+				<h3 class="greet-heading">Hello, I'm</h3>
+				<h1 class="my-heading">Vansh Mahajan</h1>
+				<h4 class="sub-heading">
+					Computer Science & Engineering Student at VIT Vellore.
+				</h4>
+				<div id="p">I have Proficiency in <div id="head"></div></div>
+				
+			</div>
+			<div class="intro-buttons">
+				<button class="btn common-btn" onclick="scrollToContact()">Hire Me</button>
+				<button class="btn ghost-btn" id="downloadButton" onclick="downloadResume()">Get Resume</button>
+			</div>
+		</div>
+	</section>
+	<!-- About Section -->
+	<section id="about" class="about">
+		<div class="about-text">
+			<h1 class="my-heading">About Me</h1>
+			<p class="lead-para">
+				I'm Vansh Mahajan, currently pursuing a B.Tech at VIT, Vellore,
+				with a passion for Artificial Intelligence and Machine Learning (AIML).
+				Raised in Jammu, I developed a deep interest in AIML during my schooling.
+				At VIT, I'm dedicated to mastering AIML concepts, exploring algorithms,
+				and engaging in hands-on projects and competitions. I'm fascinated by AIML's
+				potential to revolutionize industries and solve complex problems. My goal is
+				to leverage AIML to drive innovations and contribute to building a smarter future.
+			</p>
+			<p>
+				With a steadfast commitment to learning and a passion for AIML,
+				I am excited to embark on this journey of exploration and discovery,
+				fueled by the endless possibilities that lie ahead in the realm of technology.
+			</p>
+		</div>
+		<div class="about-image">
+			<img src="IMG_0791.jpg" alt="About Image">
+		</div>
+	</section>
+	<!-- Education Section -->
+	<section id="education">
+		<div id="education-container">
+			<div id="education-heading">
+				<h2>Education</h2>
+			</div>
+			<div id="education-content">
+				<div id="education-text">
+					<p>
+						Currently pursuing my B.Tech in Computer Science at VIT Vellore. With a schooling background
+						from Jammu, I'm in my second year, exploring the intersection of technology and creativity to
+						shape a dynamic future.
+					</p>
+				</div>
+				<div id="education-table">
+					<table>
+						<thead>
+							<tr>
+								<th>School</th>
+								<th>Degree</th>
+								<th>Grade</th>
+								<th>Duration</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Vellore Institute of Technology</td>
+								<td>B.Tech</td>
+								<td>8.36</td>
+								<td>2022-Present</td>
+							</tr>
+							<tr>
+								<td>Delhi Public School, Jammu</td>
+								<td>10+2</td>
+								<td>84.4%</td>
+								<td>2020-2022</td>
+							</tr>
+							<tr>
+								<td>Delhi Public School, Jammu</td>
+								<td>10</td>
+								<td>86.8%</td>
+								<td>2009-2020</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Skills Section -->
+	<section id="skills">
+		<div id="skill-head">
+			<p>Skills</p>
+		</div>
+		<div id="skill-list">
+			<ul>
+				<li>Python <div class="progress-container">
+						<div class="progress-bar" id="progressBar1"  style="--progress: 80%;"></div>
+					</div>
+				</li>
+				<li>Java<div class="progress-container">
+						<div class="progress-bar" id="progressBar2"  style="--progress: 90%;"></div>
+					</div>
+				</li>
+				<li>C++ <div class="progress-container">
+						<div class="progress-bar" id="progressBar3" style="--progress: 85%;" ></div>
+					</div>
+				</li>
+				<li>DSA <div class="progress-container">
+						<div class="progress-bar" id="progressBar4" style="--progress: 70%;" ></div>
+					</div>
+				</li>
+				<li>C <div class="progress-container">
+						<div class="progress-bar" id="progressBar5" style="--progress: 85%;"></div>
+					</div>
+				</li>
+				<li>R Programming <div class="progress-container">
+						<div class="progress-bar" id="progressBar6" style="--progress: 60%;"></div>
+					</div>
+				</li>
+				<li>Web Development <div class="progress-container">
+						<div class="progress-bar" id="progressBar7" style="--progress: 50%;"></div>
+					</div>
+				</li>
+				<li>MySQL <div class="progress-container">
+						<div class="progress-bar" id="progressBar8" style="--progress: 75%;"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- Projects Section -->
+	<section class="projects" id="projects">
+		<div class=projects-heading id="projects">
+			<h1 class="my-heading text-center" id="projects">Featured Projects</h1>
+		</div>
+		<div class="projects-content">
+			<div class="my-row">
+				<div class="my-col">
+					<div class="my-card port-card">
+						<div class="image">
+							<img src="store-management-software.jpg" alt="Web Design Image">
+						</div>
+						<h3 class="greet-heading blue-text">Shop Management Software</h3>
+						<p class="small-para blue-text">Python</p>
+					</div>
+				</div>
+				<div class="my-col">
+					<div class="my-card port-card">
+						<div class="image">
+							<img src="voice.jpg" alt="Web Development Image">
+						</div>
+						<h3 class="greet-heading blue-text">Voice Assistant Software</h3>
+						<p class="small-para blue-text">Python + MySQL</p>
+					</div>
+				</div>
+				<div class="my-col">
+					<div class="my-card port-card">
+						<div class="image">
+							<img src="ecom.jpg" alt="E-Commerce Image">
+						</div>
+						<h3 class="greet-heading blue-text">E-Commerce Website</h3>
+						<p class="small-para blue-text">HTML+CSS+JavaScript</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact me section -->
+	<section class="contact" id="contact">
+		<div class="contact-heading">
+			<h1 class="my-heading text-center" id="contact">Contact Me</h1>
+		</div>
+		<div class="contact-content">
+			<div class="contact-form-container">
+				<h1 class="greet-heading" id="contact">Get In Touch</h1>
+				<form class="contact-form" id="myContactForm">
+					<input class="form-controls" id="name" type="text" placeholder="Your Name" required>
+					<input class="form-controls" id="email" type="email" placeholder="Your Email" required>
+					<input class="form-controls" id="phone" type="text" placeholder="Your Phone" required>
+					<input class="form-controls" id="message" type="text" placeholder="Write your message" required>
+					<input class="form-btn btn common-btn" type="submit" value="Send Message" required>
+				</form>
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+	  					<div class="close">&times;</div>
+	  					<p>Message sent successfully!</p>
+						</div>
+  					</div>
+			</div>
+			<div class="contact-details">
+				<h1 class="greet-heading" id="contact">My Contact Details</h1>
+				<div class="details">
+					<h5 class="contact-heading">EMAIL</h5>
+					<p class="contact-text">vansh.mahajan2022@vitstudent.ac.in</p>
+				</div>
+				<div class="details">
+					<h5 class="contact-heading">PHONE</h5>
+					<p class="contact-text">+91 7006225284</p>
+				</div>
+				<div class="details">
+					<h5 class="contact-heading">ADDRESS</h5>
+					<p class="contact-text">M-622, Men's Hostel</p>
+					<p>VIT University, Vellore</p>
+					<p>Tamil Nadu, India</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script>
+		window.embeddedChatbotConfig = {
+		chatbotId: "4ySmB418YPhFB5LdOWsCG",
+		domain: "www.chatbase.co"
+		}
+		</script>
+		<script
+		src="https://www.chatbase.co/embed.min.js"
+		chatbotId="4ySmB418YPhFB5LdOWsCG"
+		domain="www.chatbase.co"
+		defer>
+		</script>
+
+	<!-- Footer section -->
+	<footer class="footer">
+		<div class="footer-content text-center">
+			<h4>Copyright © 2024 All rights reserved | Vansh Mahajan</h4>
+			<div class="soclia_links">
+				<a href="https://x.com/VANSHMA75467761?t=viQf8Up3b-tmDL7FCPLsAQ&s=09" title="twitter" target="_blank"><img src="x.jpeg" id="insta"></a>
+				<a href="https://www.linkedin.com/in/vansh-mahajan-4125b11b3" title="LinkedIn" target="_blank"><img src="in.jpg" id="insta"></a>
+				<a href="https://www.instagram.com/_vansh._mahajan_/" title="instagram" target="_blank"><img src="Instagram_logo_2022.png" id="insta"></a>
+				<a href="https://github.com/Vanshmahajan123456789" title="github" target="_blank"><img src="github.png" id="insta"></a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+
+		// CONTACT ME
+		function scrollToContact() {
+			var contactSection = document.getElementById("contact");
+			contactSection.scrollIntoView({ behavior: "smooth" });
+		  }
+		
+		  //DOWNLOAD MY RESUME
+		  function downloadResume() {
+			const resumeUrl = 'resume.pdf';
+			const link = document.createElement('a');
+			link.href = resumeUrl;
+			link.setAttribute('download', 'resume.pdf');
+			link.click();
+		}
+		
+		
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('myContactForm');
+			form.addEventListener('submit', function (event) {
+				event.preventDefault(); 
+				const name = document.getElementById('name').value;
+				const email = document.getElementById('email').value;
+				const phone = document.getElementById('phone').value;
+				const message = document.getElementById('message').value;
+				console.log("Name:", name);
+				console.log("Email:", email);
+				console.log("Phone:", phone);
+				console.log("Message:", message);
+				document.getElementById('name').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('phone').value = '';
+				document.getElementById('message').value = '';
+			});
+		});
+		document.addEventListener('DOMContentLoaded', function () {
+			const modal = document.getElementById('myModal');
+			const span = document.getElementsByClassName('close')[0];
+			function showModal() {
+				modal.style.display = 'block';
+				setTimeout(function () {
+					modal.style.display = 'none';
+				}, 5000);
+			}
+			span.onclick = function () {
+				modal.style.display = 'none';
+			};
+			window.onclick = function (event) {
+				if (event.target === modal) {
+					modal.style.display = 'none';
+				}
+			};
+			const form = document.getElementById('myContactForm');
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+				showModal();
+			});
+		});
+		
+		
+		
+		// The typing GIF
+		
+		const words = ["Python", "JavaScript", "HTML5" , "CSS" , "Kotlin" , "C++" , "Java" ,"Assembly" , "Machine Learning" ];
+		  let currentWordIndex = 0;
+		
+		  function typeEffect(header, newText, speed, callback) {
+			let index = 0;
+		
+			function typeCharacter() {
+			  header.innerText = newText.substring(0, index + 1);
+			  index++;
+			  if (index >= newText.length) {
+				clearInterval(interval);
+				if (callback) {
+				  setTimeout(callback, 500);
+				}
+			  }
+			}
+		
+			const interval = setInterval(typeCharacter, speed);
+		  }
+		
+		  function backspaceEffect(header, callback) {
+			let currentText = header.innerText;
+			let index = currentText.length;
+		
+			function deleteCharacter() {
+			  header.innerText = currentText.substring(0, index - 1);
+			  index--;
+			  if (index <= 0) {
+				clearInterval(interval);
+				if (callback) {
+				  callback();
+				}
+			  }
+			}
+		
+			const interval = setInterval(deleteCharacter, 100);
+		  }
+		
+		  function typeNextWord(header) {
+			backspaceEffect(header, () => {
+			  currentWordIndex = (currentWordIndex + 1) % words.length;
+			  const nextWord = words[currentWordIndex];
+			  typeEffect(header, nextWord, 100, () => {
+				setTimeout(() => {
+				  typeNextWord(header);
+				}, 1000);
+			  });
+			});
+		  }
+		
+		  const header = document.getElementById('head');
+		  typeNextWord(header);
+		
+		</script>
+</body>
+</html>
